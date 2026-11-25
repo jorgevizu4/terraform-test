@@ -12,10 +12,10 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-east-1"
+  region                   = "us-east-1"
   shared_credentials_files = [var.emulator_credentials_path]
-  profile                  = "default" # Ajusta si dentro del archivo usas otro [perfil]
-
+  profile                  = "default"
+  
   skip_credentials_validation = true
   skip_metadata_api_check     = true
   skip_requesting_account_id  = true
@@ -37,7 +37,7 @@ module "aws" {
 
   app_port = var.app_port
   ssh_port = var.ssh_port
-  vpn_ip = var.vpn_ip
+  vpn_ip   = var.vpn_ip
 }
 
 # module "github" {
